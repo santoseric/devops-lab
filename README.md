@@ -7,7 +7,7 @@
     - 3 para cluster k8s
 
 2. Registrar domínio
-    - rancher.<domain>
-    - app1.<domain>
-    - app2.<domain>
+    - rancher.domain
+    - app1.domain
+    - app2.domain
     
