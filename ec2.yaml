@@ -15,7 +15,7 @@ Parameters:
   InstanceType:
     Description: Cluster K8s EC2 instance type
     Type: String
-    Default: t3.medium
+    Default: t3.small
     AllowedValues: [t2.nano, t2.micro, t2.small, t2.medium, t2.large, t2.xlarge, t2.2xlarge,
       t3.nano, t3.micro, t3.small, t3.medium, t3.large, t3.xlarge, t3.2xlarge,
       m4.large, m4.xlarge, m4.2xlarge, m4.4xlarge, m4.10xlarge,
@@ -41,10 +41,10 @@ Resources:
   EC2Instance:
     Type: AWS::EC2::Instance
     Properties:
-      InstanceType: !Ref 'InstanceType'
-      SecurityGroups: [!Ref 'InstanceSecurityGroup']
-      KeyName: !Ref 'KeyName'
-      ImageId: !Ref 'LatestAmiId'
+      InstanceType: t3.medium
+      SecurityGroups: sg-0d46800fed2435556
+      KeyName: DevOps-Lab
+      ImageId: ami-0e2b332e63c56bcb5
   InstanceSecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
