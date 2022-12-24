@@ -1,0 +1,8 @@
+- name: Install Docker
+  hosts: ubuntu
+  remote_user: ubuntu
+  tasks:
+  - name: Install Docker from Rancher repo
+    ansible.builtin.shell: 
+      name: curl https://releases.rancher.com/install-docker/20.10.sh | sh
+      

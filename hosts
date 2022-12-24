@@ -1,9 +1,9 @@
 [ubuntu]
-137.184.19.45
-137.184.19.46
-137.184.19.47
-137.184.19.48
+3.233.84.69
+44.208.107.185
+50.17.215.30
+52.45.225.115
 
 [ubuntu:vars]
-ansible_ssh_private_key_file=~/.ssh/devops-lab
+ansible_ssh_private_key_file=~/.ssh/devops-lab.pem
 ansible_user=ubuntu
