@@ -29,10 +29,19 @@
     git clone https://github.com/santoseric/devopsninja.git
     ```
     
-    Acessar a pasta exercicios/app/redis
+    Acessar a pasta exercicios/app
 
-    ### Buildar imagens
+    ##### Buildar imagens
     - Redis
+    ```
+    cd redis
+    docker build -t xcirel/redis:devops .
+    docker run -d --name redis -p 6379:6379 xcirel/redis:devops
+    docker container ls
+    docker logs redis
+    ```
+
+
     - Node
     - Nginx
 
