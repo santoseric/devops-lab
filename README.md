@@ -18,27 +18,27 @@
     ```
     - Conectar no Rancher Server e instalar Docker Compose
     ```
-    sudo apt-get install git -y
-    sudo curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-    sudo chmod +x /usr/local/bin/docker-compose
-    sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+    $ sudo apt-get install git -y
+    $ sudo curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+    $ sudo chmod +x /usr/local/bin/docker-compose
+    $ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
     ```
     - clonar repositório   
     ```
-    cd
-    git clone https://github.com/santoseric/devopsninja.git
+    $ cd ~
+    $ git clone https://github.com/santoseric/devopsninja.git
     ```
     
     Acessar a pasta exercicios/app
 
-    ##### Buildar imagens
+    #### Buildar imagens
     - Redis
     ```
-    cd redis
-    docker build -t xcirel/redis:devops .
-    docker run -d --name redis -p 6379:6379 xcirel/redis:devops
-    docker container ls
-    docker logs redis
+    $ cd redis
+    $ docker build -t xcirel/redis:devops .
+    $ docker run -d --name redis -p 6379:6379 xcirel/redis:devops
+    $ docker container ls
+    $ docker logs redis
     ```
 
 
@@ -49,8 +49,25 @@
 4. Instalar o Rancher Single Node no Rancher Server
      
     ```
-    docker run -d --restart=unless-stopped -v /opt/rancher:/var/lib/rancher -p 80:80 -p 443:443 --privileged rancher/rancher:latest
+    $ docker run -d --restart=unless-stopped -v /opt/rancher:/var/lib/rancher -p 80:80 -p 443:443 --privileged rancher/rancher:latest
     ```
     - Nessa altura, o Rancher já pode ser acessado através da URL http://rancher.domain
     - Criar cluster K8s através do Rancher, aguardar pois o provisionamento pode demorar um pouco. Aproveite enquanto aguarda para experiementar o [DataDog](https://www.datadoghq.com) para monitorar o seu cluster ;)
     - Instalar o kubectl no host A (Rancher Server)
+    ```
+    $ sudo apt-get update && sudo apt-get install -y apt-transport-https gnupg2
+    $ curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+    $ echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+    $ sudo apt-get update
+    $ sudo apt-get install -y kubectl
+    $ kubectl version --output=yaml
+    ```
+    - Criar diretório, lançar configurações do cluster no Rancher
+        - Acessar o cluster e obter informações
+        [Kubeconfig File](screenshots/kubeconfig-file-button.png)
+    ```
+    $ mkdir ~/.kube
+    $ vi ~/.kube/config
+    $ kubectl get nodes    
+    ```
+    
