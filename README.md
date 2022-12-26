@@ -79,3 +79,11 @@
     $ vi ~/.kube/config
     $ kubectl get nodes    
     ```    
+5. Criar ingress para expor a aplicação para a internet, podendo assim, acessar o dashboard do Traefik (proxy reverso)
+    ```
+    $ kubectl apply -f ui.yml
+    ```
+    Cluster >> System >> [Load Balancer](screenshots/dashboard-traefik.png) 
+
+    [Traefik](screenshots/dashboard-traefik-2.png)
+
