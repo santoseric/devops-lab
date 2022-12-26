@@ -78,6 +78,4 @@
     $ mkdir ~/.kube
     $ vi ~/.kube/config
     $ kubectl get nodes    
-    ```
-    -  [Get nodes](screenshots/kubectl-get-nodes.png),
-    
+    ```    
