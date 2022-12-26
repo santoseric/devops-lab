@@ -88,5 +88,5 @@
     [Traefik](screenshots/dashboard-traefik-2.png)
 
 6. Volumes
-    Vamos fazer a instalação do LongHorn acessando o nome do cluster >> Default >> Apps >> [Launch](screenshots/longhorn-install.png) procure por longhorn na caixa de pesquisa e faça a instalação mantendo as opções [default](longhorn-install-default-parameters.png) após o deployment do LongHorn, você será capaz de acessar o [dashboard](screenshots/longhorn-dashboard.png)
-
+    - Vamos fazer a instalação do LongHorn acessando o nome do cluster >> Default >> Apps >> [Launch](screenshots/longhorn-install.png) procure por longhorn na caixa de pesquisa e faça a instalação mantendo as opções [default](longhorn-default-parameters.png) após o deployment do LongHorn, você será capaz de acessar o [dashboard](screenshots/longhorn-dashboard.png)
+    - Vamos fazer o deploy de um banco de dados MySQL com volume persistente e sua [replicação](screenshots/longhorn-deployed-volume-with-replicas.png)
