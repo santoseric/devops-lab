@@ -98,7 +98,13 @@
         ```
 
 7. Graylog
-    - Vamos fazer o deploy e configuração (não esqueça de alterar o domínio devops-lab.click para o seu domínio)
+    - Vamos fazer o deploy e configuração, não esqueça de alterar o domínio devops-lab.click para o seu domínio no arquivo graylog.yml
+    ```
+    $ vim graylog.yml
+    ```
+    - No vim, utilize o comando a seguir para substituir o domínio atual pelo seu domínio. Dentro do vim, pressione ":" para chamar o comando: % s/devops-lab.click/seudominio/gc pressione enter >> confirme
+    - Agora que editou o arquivo, vamos aplicar e fazer o deploy com o comando abaixo.
     ```
     $ kubectl apply -f graylog.yml
     ```
+    [Print 1](screenshots/graylog-k8s.png) [Print 2](screenshots/graylog-k8s-2.png) [Print 3](screenshots/graylog-k8s-3.png)
