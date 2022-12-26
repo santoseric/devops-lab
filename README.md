@@ -90,3 +90,15 @@
 6. Volumes
     - Vamos fazer a instalação do LongHorn acessando o nome do cluster >> Default >> Apps >> [Launch](screenshots/longhorn-install.png) procure por longhorn na caixa de pesquisa e faça a instalação mantendo as opções [default](longhorn-default-parameters.png) após o deployment do LongHorn, você será capaz de acessar o [dashboard](screenshots/longhorn-dashboard.png)
     - Vamos fazer o deploy de um banco de dados MySQL com volume persistente e sua [replicação](screenshots/longhorn-deployed-volume-with-replicas.png)
+    Veja o pod do MySQL através no Rancher em Workloads
+    - Agora pode fazer um teste de persistência deployando um MySQL, verificando em qual servidor o pod está rodando, conectar no container mysql, criar um arquivo qualquer na pasta /var/lib/mysql, matar o pod simulnando um erro e, no próximo pod que será criado **automaticamente**, vocẽ poderá conectar e verificar.  
+        ```
+        $ cd /vartouch 
+
+        ```
+
+7. Graylog
+    - Vamos fazer o deploy e configuração (não esqueça de alterar o domínio devops-lab.click para o seu domínio)
+    ```
+    $ kubectl apply -f graylog.yml
+    ```
