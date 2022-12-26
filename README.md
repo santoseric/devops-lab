@@ -40,11 +40,21 @@
     $ docker container ls
     $ docker logs redis
     ```
-
-
     - Node
+    ```
+    $ cd ../node
+    $ docker build -t xcirel/node:devops .
+    $ docker run -d --name node -p 8080:8080 --link redis xcirel/node:devops
+    $ docker container ls
+    $ docker logs node
+    ```
     - Nginx
-
+    ```
+    $ cd ../nginx
+    $ docker build -t xcirel/nginx:devops .
+    $ docker run -d --name nginx -p 80:80 --link node xcirel/nginx:devops
+    $ docker container ls
+    ```
 
 4. Instalar o Rancher Single Node no Rancher Server
      
@@ -52,7 +62,7 @@
     $ docker run -d --restart=unless-stopped -v /opt/rancher:/var/lib/rancher -p 80:80 -p 443:443 --privileged rancher/rancher:latest
     ```
     - Nessa altura, o Rancher já pode ser acessado através da URL http://rancher.domain
-    - Criar cluster K8s através do Rancher, aguardar pois o provisionamento pode demorar um pouco. Aproveite enquanto aguarda para experiementar o [DataDog](https://www.datadoghq.com) para monitorar o seu cluster ;)
+    - Criar cluster K8s através do Rancher, aguardar pois o provisionamento pode demorar um pouco.
     - Instalar o kubectl no host A (Rancher Server)
     ```
     $ sudo apt-get update && sudo apt-get install -y apt-transport-https gnupg2
@@ -62,12 +72,12 @@
     $ sudo apt-get install -y kubectl
     $ kubectl version --output=yaml
     ```
-    - Criar diretório, lançar configurações do cluster no Rancher
-        - Acessar o cluster e obter informações
-        [Kubeconfig File](screenshots/kubeconfig-file-button.png)
+    - Criar diretório, lançar configurações do cluster no Rancher Server para poder disparar comando para o cluster através do bash
+        - Acessar o cluster e obter informações [Kubeconfig File](screenshots/kubeconfig-file-button.png), criar arquivo config em ~/.kube/config com o [conteúdo yaml](screenshots/kubeconfig-file-yaml.png) do cluster
     ```
     $ mkdir ~/.kube
     $ vi ~/.kube/config
     $ kubectl get nodes    
     ```
+    -  [Get nodes](screenshots/kubectl-get-nodes.png),
     
