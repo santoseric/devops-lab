@@ -6,10 +6,10 @@
     - 1 Rancher server
     - 3 para cluster k8s
 
-2. Registrar domínio e configurar subdomínios
-    - rancher.domain
-    - app1.domain
-    - app2.domain
+2. Registrar domínio e configurar subdomínios (neste projeto, irei trabalhar com o domínio devops-lab.click)
+    - rancher.devops-lab.click
+    - app1.devops-lab.click
+    - app2.devops-lab.click
 
 3. Instalar o Docker em todas as máquinas
     - Docker versão 18.09
