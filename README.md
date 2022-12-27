@@ -97,7 +97,7 @@
 
         ```
 
-7. Graylog
+7. Graylog, Prometheus, Grafana
     - Vamos fazer o deploy e configuração, não esqueça de alterar o domínio devops-lab.click para o seu domínio no arquivo graylog.yml
     ```
     $ vim graylog.yml
@@ -108,3 +108,8 @@
     $ kubectl apply -f graylog.yml
     ```
     [Print 1](screenshots/graylog-k8s.png) [Print 2](screenshots/graylog-k8s-2.png) [Print 3](screenshots/graylog-k8s-3.png)
+    - O Prometheus já vem instalado, basta habilitar na opção Tools >> Monitoring >> Enable
+    Painel de monitoramento no Rancher Server
+    [Print 1](screenshots/monitoring-panel-on-rancher.png) [Print 2](screenshots/monitoring-panel-on-rancher-2.png)
+    - Grafana
+    [Print 1](screenshots/grafana-cluster.png) [Print 2](screenshots/grafana-cluster-2.png) [Print 3](screenshots/grafana-cluster-3.png)
