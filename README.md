@@ -3,8 +3,8 @@
 ## Passo a passo
 
 1. Provisionar 4 servidores (2-4 vCPU, 4-6 GB memory, 30 GB disk SSD General purpose, OS Ubuntu)
-    - 1 Rancher server
-    - 3 para cluster k8s
+    - 1 Rancher server (host A)
+    - 3 para cluster k8s (host B, C, D)
 
 2. Registrar domínio e configurar subdomínios (neste projeto, irei trabalhar com o domínio devops-lab.click)
     - rancher.devops-lab.click
@@ -108,8 +108,10 @@
     $ kubectl apply -f graylog.yml
     ```
     [Print 1](screenshots/graylog-k8s.png) [Print 2](screenshots/graylog-k8s-2.png) [Print 3](screenshots/graylog-k8s-3.png)
+    
     - O Prometheus já vem instalado, basta habilitar na opção Tools >> Monitoring >> Enable
     Painel de monitoramento no Rancher Server
     [Print 1](screenshots/monitoring-panel-on-rancher.png) [Print 2](screenshots/monitoring-panel-on-rancher-2.png)
+    
     - Grafana
-    [Print 1](screenshots/grafana-cluster.png) [Print 2](screenshots/grafana-cluster-2.png) [Print 3](screenshots/grafana-cluster-3.png)
+    [Print 1](screenshots/grafana-cluster.png) [Print 2](screenshots/grafana-pods-cpu.png) [Print 3](screenshots/grafana-pods-cpu-2.png)
