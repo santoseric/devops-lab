@@ -8,12 +8,18 @@ Description: 'AWS CloudFormation Sample Template EC2InstanceWithSecurityGroupSam
   EC2 instance. You will be billed for the AWS resources used if you create a stack
   from this template.'
 Parameters:
+  InstanceCount:
+    Description: Number of EC2 instances (must be between 1 and 5).
+    Type: Number
+    Default: 4
+    MinValue: 1
+    MaxValue: 5
   KeyName:
     Description: Name of an existing EC2 KeyPair to enable SSH access to the instance
     Type: AWS::EC2::KeyPair::KeyName
     ConstraintDescription: must be the name of an existing EC2 KeyPair.
   InstanceType:
-    Description: WebServer EC2 instance type
+    Description: Rancher Kubernetes cluster EC2 instance type
     Type: String
     Default: t3.medium
     AllowedValues: [t2.nano, t2.micro, t2.small, t2.medium, t2.large, t2.xlarge, t2.2xlarge,
@@ -36,7 +42,7 @@ Parameters:
     ConstraintDescription: must be a valid IP CIDR range of the form x.x.x.x/x.
   LatestAmiId:
     Type:  'AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>'
-    Default: '/aws/service/canonical/ubuntu/server/jammy/stable/current/amd64/hvm/ebs-gp2/ami-id'
+    Default: '/aws/service/canonical/ubuntu/server/bionic/stable/current/amd64/hvm/ebs-gp2/ami-id'
     #Default: '/aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2'
 Resources:
   EC2Instance:
