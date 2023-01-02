@@ -119,3 +119,4 @@
 9. Liveness probes
     Verifica de tempos em tempos se um pod está vivo ou morto e se o serviço está respondendo. Caso seja detectado algum problema, ele mata e recria o **pod.**
     Neste exemplo, vamos definir o tempo de checagem para 3 segundos. Verifique no arquivo *liveness.yml*
+    
